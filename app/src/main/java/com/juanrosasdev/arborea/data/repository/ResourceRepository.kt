@@ -1,4 +1,4 @@
-package com.juanrosasdev.arborea.data
+package com.juanrosasdev.arborea.data.repository
 
 import com.juanrosasdev.arborea.data.model.ResourceModel
 import com.juanrosasdev.arborea.data.model.ResourceProvider

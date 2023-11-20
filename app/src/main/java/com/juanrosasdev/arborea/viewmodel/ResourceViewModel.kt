@@ -1,10 +1,10 @@
-package com.juanrosasdev.arborea.ui.viewmodel
+package com.juanrosasdev.arborea.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.juanrosasdev.arborea.data.repository.ResourceRepository
 import com.juanrosasdev.arborea.data.model.ResourceModel
-import com.juanrosasdev.arborea.domain.GetResourceUseCase
 import kotlinx.coroutines.launch
 
 class ResourceViewModel : ViewModel() {
@@ -12,20 +12,18 @@ class ResourceViewModel : ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
 
 
-    var getResourceUseCase = GetResourceUseCase()
+    var resourceRepository = ResourceRepository()
 
     fun onCreate() {
         viewModelScope.launch {
             isLoading.postValue(true)
 
-            val result = getResourceUseCase()
+            val result = resourceRepository.getAllResources()
             if (!result.isNullOrEmpty()){
                 resourceModel.postValue(result[0])
                 isLoading.postValue(false)
 
             }
-
-
         }
     }
 

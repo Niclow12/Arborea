@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Arborea</string>
+    <string name="error_with_parameter">Error: %1$s</string>
 </resources>
