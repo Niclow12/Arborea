@@ -6,32 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".view.ProfileActivity">
 
+
     <ImageView
-        android:id="@+id/picImageViewPerfil"
-        android:layout_width="343dp"
-        android:layout_height="255dp"
+        android:id="@+id/profileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="80dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvNombre"
+        android:background="@drawable/circular_background"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@id/picImageViewPerfil" />
+        android:contentDescription="@string/profile_image"
+        tools:targetApi="s" />
 
     <TextView
         android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:text="Nombre"
+        android:layout_marginTop="50dp"
+        android:text="@string/name"
         android:textAlignment="center"
-
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="50dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
