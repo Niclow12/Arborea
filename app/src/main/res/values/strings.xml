@@ -16,4 +16,9 @@
     <string name="icono_de_cierre">icono de cierre</string>
     <!-- Activity Login -->
 
+    <!-- Activity MainActivity -->
+
+    <string name="button_viewmap">VER MAPA</string>
+    <string name="button_form_resource">NUEVO RECURSO</string>
+
 </resources>

@@ -1,5 +1,6 @@
 package com.juanrosasdev.arborea.view
 
+import android.content.Intent
 import android.location.Location
 import android.os.Bundle
 import android.widget.Toast
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         locationService = LocationService(this)
+        setUI()
 
         initializeLocation()
         initializeResourceViewModel()
@@ -49,6 +51,26 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun setUI() {
+        binding.btnViewmap.setOnClickListener {
+            navigateToViewMapActivity()
+        }
+
+        binding.btnNewResource.setOnClickListener {
+            navigateToNewResourceActivity()
+        }
+
+
+    }
+    private fun navigateToViewMapActivity() {
+        val intent = Intent(this, MapResourceActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToNewResourceActivity() {
+        val intent = Intent(this, FormResourceActivity::class.java)
+        startActivity(intent)
+    }
 
     private fun initializeResourceViewModel() {
         resourceViewModel.onCreate()
