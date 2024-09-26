@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
+
+    <Button
+        android:id="@+id/btn_viewmap"
+        style="@style/ButtonStyle"
+        android:layout_marginTop="30dp"
+        android:enabled="true"
+        android:text="@string/button_viewmap"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+       />
+
+    <Button
+        android:id="@+id/btn_new_resource"
+        style="@style/ButtonStyle"
+        android:layout_marginTop="16dp"
+        android:text="@string/button_form_resource"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_viewmap" />
     <TextView
         android:id="@+id/txttest"
         android:layout_width="wrap_content"
